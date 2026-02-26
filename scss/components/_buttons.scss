@@ -7,7 +7,7 @@
 
   // Primary button - dark background, white text
   &--primary {
-    background-color: $color-dark;
+    background-color: $color-dark-blue;
     color: $color-white;
 
     &:hover {
@@ -17,11 +17,12 @@
 
   // Primary button white - white background, dark text
   &--primarywht {
-    background-color: $color-white;
-    color: $color-dark;
+    background-color: transparent;
+    color: $color-white;
 
     &:hover {
-      background-color: lighten($color-yellow, 10%);
+      background-color: $color-white;
+      color: $color-dark;
     }
   }
 
@@ -67,15 +68,16 @@
       transform: none;
       box-shadow: none;
       .btn__icon {
-        background-color: $color-yellow;
+        background-color: $color-dark-blue;
+        color: $color-white;
       }
     }
   }
 
   // White outlined (Free Trial in navbar)
   &--outline-white {
-    background-color: transparent;
-    color: $color-white;
+    background-color: $color-white;
+    color: $color-dark;
     border: 2px solid $color-white;
     padding: 8px 20px;
 

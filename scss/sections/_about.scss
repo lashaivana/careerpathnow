@@ -50,11 +50,11 @@
       width: 52px;
       height: 52px;
       border-radius: $radius-full;
-      background-color: $color-dark;
+      background-color: $color-dark-blue;
       @include flex-center;
       margin: 0 auto $spacing-sm;
       font-size: $font-size-md;
-      color: $color-yellow;
+      color: $color-white;
     }
 
     &-title {

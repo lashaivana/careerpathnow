@@ -24,32 +24,50 @@
     }
   }
 
-  // Left - images
-  &__images {
-    position: relative;
-    height: 320px;
-
-    img {
-      border-radius: $radius-lg;
-      object-fit: cover;
-    }
-
-    &-main {
-      width: 70%;
-      height: 220px;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    &-secondary {
-      width: 55%;
-      height: 160px;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-    }
+// Services და Stories-სთვის საერთო მიდგომა
+.services__images, .stories__images {
+  width: 100%;
+  max-width: 462px; // მაქსიმალური სიგანე, რაც გინდოდა
+  aspect-ratio: 1 / 1; // ან 462 / 474 თუ ზუსტად ეგ პროპორცია გინდა
+  display: flex;
+  
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // სურათი შეავსებს სივრცეს და არ გაიწელება
+    border-radius: $radius-lg;
   }
+}
+
+
+
+
+  // Left - images
+  // &__images {
+  //   position: relative;
+  //   // height: 320px;
+
+  //   // img {
+  //   //   border-radius: $radius-lg;
+  //   //   object-fit: cover;
+  //   // }
+
+  //   &-main {
+  //     width: 70%;
+  //     height: 220px;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //   }
+
+  //   &-secondary {
+  //     width: 55%;
+  //     height: 160px;
+  //     position: absolute;
+  //     bottom: 0;
+  //     right: 0;
+  //   }
+  // }
 
   // Right - content
   &__content {
@@ -160,29 +178,29 @@
     }
   }
 
-  &__images {
-    position: relative;
-    height: 300px;
+  // &__images {
+  //   position: relative;
+  //   height: 300px;
 
-    img {
-      border-radius: $radius-lg;
-      object-fit: cover;
-    }
+  //   img {
+  //     border-radius: $radius-lg;
+  //     object-fit: cover;
+  //   }
 
-    &-main {
-      width: 65%;
-      height: 200px;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
+  //   &-main {
+  //     width: 65%;
+  //     height: 200px;
+  //     position: absolute;
+  //     top: 0;
+  //     right: 0;
+  //   }
 
-    &-secondary {
-      width: 60%;
-      height: 160px;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-    }
-  }
+  //   &-secondary {
+  //     width: 60%;
+  //     height: 160px;
+  //     position: absolute;
+  //     bottom: 0;
+  //     left: 0;
+  //   }
+  // }
 }

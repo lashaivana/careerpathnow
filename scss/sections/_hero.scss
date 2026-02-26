@@ -115,42 +115,78 @@
     padding: $spacing-sm;
     box-shadow: $shadow-md;
     color: $color-dark;
+    text-align: center;
 
     &--top {
       top: 20px;
-      left: -20px;
-      width: 170px;
+      left: -60px;
+      width: 143px;
+      height: 106px;
+    }
+
+    &--middle{
+      top: 150px;
+      left: -60px;
+      width: 143px;
+      height: 106px;
     }
 
     &--bottom {
-      bottom: 40px;
-      left: -20px;
-      width: 170px;
+      bottom: 20px;
+      left: -60px;
+      width: 143px;
+      height: 106px;
     }
 
-    &-label {
-      font-size: $font-size-xs;
-      color: $color-text-light;
-      margin-bottom: 4px;
-    }
-
-    &-value {
-      font-size: $font-size-lg;
-      font-weight: $font-weight-bold;
+    h4 {
+      font-size: 12px; // შეამცირე სათაურის ზომა
+      margin: 0;
+      line-height: 1.2;
       color: $color-dark;
     }
 
-    &-users {
-      display: flex;
-      gap: 4px;
-      margin-top: 4px;
-
-      img {
-        width: 24px;
-        height: 24px;
-        border-radius: $radius-full;
-        object-fit: cover;
-      }
+    p {
+      font-size: 10px; // შეამცირე ტექსტის ზომა
+      margin: 0;
+      color: $color-text-light;
     }
+
+    img {
+      width: auto; // შეამცირე იკონების/პროფილების ზომა
+      height: 30px;
+      margin-top: 4px;
+      margin: auto;
+    }
+
+    // &-label {
+    //   font-size: $font-size-xs;
+    //   color: $color-text-light;
+    //   margin-bottom: 4px;
+    // }
+
+    // &-value {
+    //   font-size: $font-size-lg;
+    //   font-weight: $font-weight-bold;
+    //   color: $color-dark;
+    // }
+
+    // &-users {
+    //   display: flex;
+    //   gap: 4px;
+    //   margin-top: 4px;
+
+    //   img {
+    //     width: 24px;
+    //     height: 24px;
+    //     border-radius: $radius-full;
+    //     object-fit: cover;
+    //   }
+    // }
   }
 }
+    .banner-card{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+   
