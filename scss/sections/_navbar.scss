@@ -1,0 +1,103 @@
+// ============================================
+// NAVBAR - კაცი 1-ის ნაწილი
+// ============================================
+
+.navbar {
+  background-color: $color-dark-navy;
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: $shadow-sm;
+
+  &__container {
+    @include container;
+    @include flex-between;
+  }
+
+  // Logo
+  &__logo {
+    font-size: $font-size-md;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+  }
+
+  // Navigation links
+  &__links {
+    @include flex-center;
+    gap: $spacing-md;
+
+    @include mobile {
+      display: none; // mobile-ზე hamburger მენიუ
+    }
+
+    li a {
+      font-size: $font-size-sm;
+      color: $color-white;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
+  }
+
+  // Right side (icon + buttons)
+  &__actions {
+    @include flex-center;
+    gap: $spacing-sm;
+  }
+
+  &__icon {
+    color: $color-white;
+    font-size: $font-size-md;
+    cursor: pointer;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  // Hamburger (mobile only)
+  &__hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+
+    @include mobile {
+      display: flex;
+    }
+
+    span {
+      width: 24px;
+      height: 2px;
+      background-color: $color-white;
+      border-radius: 2px;
+      transition: all $transition-normal;
+    }
+  }
+
+  // Mobile menu (open state)
+  &__mobile-menu {
+   
+
+    display: none;
+    flex-direction: column; // ← @include flex-column-ის მაგივრად
+    gap: $spacing-sm;
+    padding: $spacing-sm $container-padding;
+    background-color: $color-dark-navy;
+
+    &.is-open {
+      display: flex;
+    }
+
+    li a {
+      font-size: $font-size-sm;
+      color: $color-white;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba($color-white, 0.1);
+    }
+  }
+}

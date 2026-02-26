@@ -1,0 +1,187 @@
+// ============================================
+// REVIEWS - კაცი 3-ის ნაწილი
+// ============================================
+
+.reviews {
+  @include section-padding;
+  background-color: $color-dark;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+
+    h2 {
+      @include section-title;
+    }
+
+    p {
+      @include section-subtitle;
+      color: rgba($color-white, 0.7);
+    }
+  }
+
+  // Cards row
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-bottom: $spacing-md;
+
+    @include mobile {
+      grid-template-columns: 1fr; // mobile-ზე სვეტი
+    }
+  }
+
+  &__card {
+    @include card;
+    background-color: $color-dark-navy;
+    border: 1px solid rgba($color-white, 0.1);
+
+    &-author {
+      @include flex-center;
+      gap: $spacing-sm;
+      justify-content: flex-start;
+      margin-bottom: $spacing-sm;
+
+      img {
+        width: 44px;
+        height: 44px;
+        border-radius: $radius-full;
+        object-fit: cover;
+        flex-shrink: 0;
+      }
+    }
+
+    &-name {
+      font-size: $font-size-sm;
+      font-weight: $font-weight-semibold;
+      color: $color-white;
+    }
+
+    &-role {
+      font-size: $font-size-xs;
+      color: $color-text-light;
+    }
+
+    &-text {
+      font-size: $font-size-sm;
+      color: rgba($color-white, 0.7);
+      line-height: 1.7;
+    }
+  }
+
+  // Pagination arrows
+  &__nav {
+    @include flex-center;
+    gap: $spacing-sm;
+
+    button {
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+      border: 1px solid rgba($color-white, 0.3);
+      background: transparent;
+      color: $color-white;
+      @include flex-center;
+      transition: all $transition-normal;
+      font-size: $font-size-base;
+
+      &:hover,
+      &.active {
+        background-color: $color-yellow;
+        border-color: $color-yellow;
+        color: $color-dark;
+      }
+    }
+  }
+}
+
+// ============================================
+// CONTACT / CTA SECTION - კაცი 3-ის ნაწილი
+// ============================================
+
+.contact {
+  @include section-padding;
+
+  &__container {
+    @include container;
+  }
+
+  &__wrapper {
+    background-color: $color-yellow-bg;
+    border-radius: $radius-xl;
+    padding: $spacing-xl $spacing-lg;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-dark;
+    margin-bottom: $spacing-sm;
+
+    @include mobile {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-sm;
+    color: $color-text;
+    max-width: 540px;
+    margin: 0 auto $spacing-lg;
+    line-height: 1.7;
+  }
+
+  &__form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-sm;
+
+    @include mobile {
+      grid-template-columns: 1fr; // mobile-ზე 1 სვეტი
+    }
+  }
+
+  &__input {
+    padding: 14px 18px;
+    border-radius: $radius-md;
+    border: 1px solid rgba($color-dark, 0.2);
+    background-color: $color-white;
+    font-size: $font-size-sm;
+    color: $color-dark;
+    outline: none;
+    transition: border-color $transition-fast;
+    width: 100%;
+
+    &::placeholder {
+      color: rgba($color-dark, 0.45);
+    }
+
+    &:focus {
+      border-color: $color-dark;
+    }
+
+    // Textarea spans full width
+    &--full {
+      grid-column: 1 / -1;
+    }
+
+    &--textarea {
+      resize: vertical;
+      min-height: 120px;
+      grid-column: 1 / -1;
+    }
+  }
+
+  &__submit {
+    grid-column: 1 / -1;
+    @include flex-center;
+  }
+}

@@ -1,0 +1,167 @@
+// ============================================
+// MIXINS - CareerPathNow
+// ============================================
+
+// Responsive breakpoints
+// გამოყენება: @include mobile { ... }  @include tablet { ... }
+@mixin mobile {
+  @media (max-width: #{$bp-tablet - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$bp-tablet}) and (max-width: #{$bp-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: #{$bp-desktop - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+// For stats
+
+@mixin stats-row {
+  display: flex;
+  align-items: center;
+  gap: 0;
+
+  &-avatars {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: $radius-full;
+      border: 2px solid $color-dark;
+      margin-right: -12px;
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    padding-left: 24px;
+    font-size: $font-size-sm;
+    color: rgba($color-white, 0.8);
+
+    strong {
+      display: block;
+      color: $color-white;
+      font-weight: $font-weight-bold;
+    }
+  }
+}
+
+// Flexbox helpers
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Container
+@mixin container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Button base
+@mixin btn-base {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: 10px 28px;
+  border-radius: $radius-md;
+  font-family: $font-primary;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  cursor: pointer;
+  border: none;
+  transition: all $transition-normal;
+  text-decoration: none;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+// Section padding
+@mixin section-padding {
+  padding: $spacing-xl 0;
+
+  @include mobile {
+    padding: $spacing-lg 0;
+  }
+}
+
+// Card style
+@mixin card {
+  background: $color-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  padding: $spacing-md;
+  transition: box-shadow $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+  }
+}
+
+// Text truncate
+@mixin text-truncate($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// Section title style
+@mixin section-title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-white;
+  text-align: center;
+  margin-bottom: $spacing-sm;
+
+  @include mobile {
+    font-size: $font-size-lg;
+  }
+}
+
+@mixin section-subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-light;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto $spacing-lg;
+  line-height: 1.7;
+}

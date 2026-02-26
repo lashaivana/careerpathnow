@@ -1,0 +1,89 @@
+// ============================================
+// ABOUT US - კაცი 2-ის ნაწილი
+// ============================================
+
+.about {
+  @include section-padding;
+  background-color: $color-dark;
+
+  &__container {
+    @include container;
+  }
+
+  &__header {
+    text-align: center;
+    margin-bottom: $spacing-lg;
+
+    h2 {
+      @include section-title;
+    }
+
+    p {
+      @include section-subtitle;
+      color: rgba($color-white, 0.7);
+    }
+  }
+
+  // 3 cards - Mission, Values, Unique Selling Points
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-md;
+    margin-bottom: $spacing-lg;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr; // mobile-ზე სვეტი
+    }
+  }
+
+  &__card {
+    @include card;
+    text-align: center;
+    background-color: $color-light-gray;
+    border: 1px solid rgba($color-white, 0.1);
+
+    &-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: $radius-full;
+      background-color: $color-dark;
+      @include flex-center;
+      margin: 0 auto $spacing-sm;
+      font-size: $font-size-md;
+      color: $color-yellow;
+    }
+
+    &-title {
+      font-size: $font-size-base;
+      font-weight: $font-weight-semibold;
+      color: $color-text;
+      margin-bottom: $spacing-xs;
+    }
+
+    &-text {
+      font-size: $font-size-sm;
+      color: rgba($color-dark-navy, 0.65);
+      line-height: 1.7;
+    }
+  }
+
+  // Learn More button centered
+  &__footer {
+    text-align: center;
+  }
+
+  // Decorative circle (visible in design)
+  &__circle {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: $radius-full;
+    border: 3px solid $color-yellow;
+    opacity: 0.4;
+    pointer-events: none;
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "careerpath-mentoring-task",
+  "version": "1.0.0",
+  "description": "``` careerpathnow/ ├── index.html ├── css/ │   └── main.css          ← (SCSS-დან კომპილირებული, commit არ ვაკეთებთ) ├── scss/ │   ├── main.scss          ← მთავარი ფაილი (import-ები) │   ├── utils/ │   │   ├── _variables.scss   ← ფერები, font-ები, spacing │   │   └── _mixins.scss      ← responsive & helpers │   ├── base/ │   │   └── _reset.scss       ← CSS reset │   ├── components/ │   │   └── _buttons.scss     ← shared buttons │   └── sections/ │       ├── _navbar.scss      ← კაცი 1 │       ├── _hero.scss        ← კაცი 1 │       ├── _about.scss       ← კაცი 2 │       ├── _services.scss    ← კაცი 2 │       ├── _reviews-contact.scss  ← კაცი 3 │       └── _footer.scss      ← კაცი 3 └── README.md ```",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

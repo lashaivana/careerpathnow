@@ -1,0 +1,37 @@
+// ============================================
+// MAIN.SCSS - ეს ფაილი import-ავს ყველაფერს
+// ============================================
+
+// 1. Utils (variables & mixins - ყველას სჭირდება!)
+// @import 'utils/variables';
+// @import 'utils/mixins';
+
+// // 2. Base styles
+// @import 'base/reset';
+
+// // 3. Components (shared UI elements)
+// @import 'components/buttons';
+
+// // 4. Sections
+// // კაცი 1
+// @import 'sections/navbar';
+// @import 'sections/hero';
+
+// // კაცი 2
+// @import 'sections/about';
+// @import 'sections/services';
+
+// // კაცი 3
+// @import 'sections/reviews-contact';
+// @import 'sections/footer';
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'reset';
+@use 'buttons';
+@use 'navbar';
+@use 'hero';
+@use 'about';
+@use 'services';
+@use 'reviews-contact';
+@use 'footer';

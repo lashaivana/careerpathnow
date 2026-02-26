@@ -1,0 +1,188 @@
+// ============================================
+// SERVICES - კაცი 2-ის ნაწილი
+// ============================================
+
+.services {
+  @include section-padding;
+
+  &__container {
+    @include container;
+  }
+
+  // Yellow background wrapper
+  &__wrapper {
+    background-color: $color-yellow-bg;
+    border-radius: $radius-xl;
+    padding: $spacing-lg;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+    align-items: center;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  // Left - images
+  &__images {
+    position: relative;
+    height: 320px;
+
+    img {
+      border-radius: $radius-lg;
+      object-fit: cover;
+    }
+
+    &-main {
+      width: 70%;
+      height: 220px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    &-secondary {
+      width: 55%;
+      height: 160px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+  }
+
+  // Right - content
+  &__content {
+    h2 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: $color-text;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__list {
+    @include flex-column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+
+    li {
+      @include flex-center;
+      gap: $spacing-sm;
+      justify-content: flex-start;
+      font-size: $font-size-sm;
+      color: $color-dark;
+      font-weight: $font-weight-medium;
+
+      .service-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: $radius-sm;
+        background-color: $color-white;
+        @include flex-center;
+        flex-shrink: 0;
+        color: $color-dark;
+        font-size: $font-size-xs;
+      }
+    }
+  }
+}
+
+// ============================================
+// STORIES - კაცი 2-ის ნაწილი
+// ============================================
+
+.stories {
+  @include section-padding;
+  padding-top: 0;
+
+  &__container {
+    @include container;
+  }
+
+  &__wrapper {
+    background-color: $color-yellow-bg;
+    border-radius: $radius-xl;
+    padding: $spacing-lg;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-lg;
+    align-items: center;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__content {
+    h2 {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      color: $color-dark;
+      margin-bottom: $spacing-sm;
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: $color-text;
+      line-height: 1.7;
+      margin-bottom: $spacing-md;
+    }
+  }
+
+  &__list {
+    @include flex-column;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+
+    li {
+      @include flex-center;
+      gap: $spacing-sm;
+      justify-content: flex-start;
+      font-size: $font-size-sm;
+      color: $color-dark;
+
+      .story-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: $radius-sm;
+        background-color: $color-white;
+        @include flex-center;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  &__images {
+    position: relative;
+    height: 300px;
+
+    img {
+      border-radius: $radius-lg;
+      object-fit: cover;
+    }
+
+    &-main {
+      width: 65%;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+
+    &-secondary {
+      width: 60%;
+      height: 160px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
