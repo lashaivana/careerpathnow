@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 *, *::before, *::after {
   box-sizing: border-box;
@@ -72,8 +73,7 @@ input, textarea {
   color: #ffffff;
 }
 .btn--primarywht:hover {
-  background-color: #ffffff;
-  color: #1a2332;
+  color: #ffffff;
 }
 .btn--secondary {
   background-color: transparent;
@@ -106,6 +106,7 @@ input, textarea {
   align-items: center;
   justify-content: center;
   font-size: 12px;
+  transition: all 0.3s ease;
 }
 .btn--play:hover {
   transform: none;
@@ -288,7 +289,8 @@ input, textarea {
   border-radius: 50%;
   border: 2px solid #1a2332;
   margin-right: -12px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero__stats-text {
   padding-left: 24px;
@@ -312,7 +314,8 @@ input, textarea {
   border-radius: 50%;
   border: 2px solid #1a2332;
   margin-right: -10px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero__stats-text {
   font-size: 12px;
@@ -341,7 +344,8 @@ input, textarea {
 .hero__image img {
   width: 100%;
   height: 400px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .hero__card {
   position: absolute;
@@ -394,6 +398,187 @@ input, textarea {
   gap: 10px;
 }
 
+body {
+  background-color: #1E2A39; /* მუქი ფონი თავიდანვე */
+  color: #ffffff; /* თეთრი ტექსტი */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  margin: 0;
+}
+
+.icon-moon {
+  display: none !important;
+}
+
+.light__nav-logo {
+  display: none;
+}
+
+.theme-switch__input:checked + .theme-switch__label .icon-sun {
+  display: none !important;
+}
+
+.theme-switch__input:checked + .theme-switch__label .icon-moon {
+  display: block !important;
+  color: #ffffff !important;
+}
+
+.theme-switch__input {
+  display: none;
+}
+
+/* მთლიანი გვერდის გადაყვანა LIGHT MODE-ზე */
+body:has(.theme-switch__input:checked) {
+  background-color: white !important; 
+  color: #052A44 !important;
+}
+
+/* ყველა ტექსტის გაფერადება ნათელ რეჟიმში */
+body:has(.theme-switch__input:checked) h1,
+body:has(.theme-switch__input:checked) h2,
+body:has(.theme-switch__input:checked) h3,
+body:has(.theme-switch__input:checked) h4,
+body:has(.theme-switch__input:checked) p {
+  color: #052A44;
+}
+
+body:has(.theme-switch__input:checked) span,
+body:has(.theme-switch__input:checked) .hero,
+body:has(.theme-switch__input:checked) .about,
+body:has(.theme-switch__input:checked) .services,
+body:has(.theme-switch__input:checked) .stories,
+body:has(.theme-switch__input:checked) .reviews,
+body:has(.theme-switch__input:checked) .contact,
+body:has(.theme-switch__input:checked) .footer {
+  background-color: #ffffff !important;
+}
+
+body:has(.theme-switch__input:checked) .btn--primarywht {
+  background-color: #052A44;
+  color: #ffffff;
+}
+
+body:has(#theme-toggle:checked) .btn--play {
+  color: #052A44 !important;
+}
+
+
+body:has(#theme-toggle:checked) .about__card {
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body:has(#theme-toggle:checked) .footer__brand-name,
+body:has(#theme-toggle:checked) .footer__brand-info {
+  color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .footer__social-links a {
+  color: #052A44;
+  border-radius: 50%;
+  border: 1px solid #052A44;
+}
+
+body:has(#theme-toggle:checked) .reviews__nav button {
+  color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .reviews__nav button:hover {
+  color: white;
+  background-color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .active {
+  color: #ffffff;
+}
+
+body:has(.theme-switch__input:checked) .hero__stats-text {
+  color: #052A44;
+}
+
+body:has(.theme-switch__input:checked) .hero__stats-text strong {
+  color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .dark__navbar-logo {
+  display: none;
+}
+
+body:has(#theme-toggle:checked) .light__nav-logo {
+  display: flex;
+}
+
+/* theme.scss */
+
+@media (min-width: 768px) {
+  .dark__navbar-logo,
+  .light__nav-logo {
+    display: none !important;
+  }
+}
+
+/* 2. თემის ცვლილების ბლოკი */
+@media (max-width: 767px) {
+  body:has(.theme-switch__input:checked) .dark__navbar-logo {
+    display: none !important;
+  }
+  body:has(.theme-switch__input:checked) .light__nav-logo {
+    display: flex !important;
+    color: #052A44;
+  }
+}
+
+/* theme.scss */
+body:has(#theme-toggle:checked) {
+  background-color: #ffffff !important;
+  color: #052A44 !important;
+  /* მობილურის ვერსია (767px-მდე) */
+}
+@media (max-width: 767px) {
+  body:has(#theme-toggle:checked) .navbar {
+    background-color: #ffffff !important;
+  }
+  body:has(#theme-toggle:checked) .dark__navbar-logo {
+    display: none !important;
+  }
+  body:has(#theme-toggle:checked) .light__nav-logo {
+    display: block !important;
+  }
+  body:has(#theme-toggle:checked) .navbar__hamburger span {
+    background-color: #052A44 !important;
+  }
+  body:has(#theme-toggle:checked) .navbar__actions .theme-switch__label i,
+  body:has(#theme-toggle:checked) .navbar__icon,
+  body:has(#theme-toggle:checked) .fa-sun,
+  body:has(#theme-toggle:checked) .fa-moon {
+    color: #052A44 !important;
+  }
+  body:has(#theme-toggle:checked) .navbar__mobile-menu {
+    background-color: #ffffff !important;
+  }
+  body:has(#theme-toggle:checked) .navbar__mobile-menu li a {
+    color: #052A44 !important;
+  }
+}
+@media (min-width: 768px) {
+  body:has(#theme-toggle:checked) .navbar {
+    background-color: #052A44 !important;
+  }
+  body:has(#theme-toggle:checked) .light__nav-logo,
+  body:has(#theme-toggle:checked) .dark__navbar-logo {
+    display: none !important;
+  }
+  body:has(#theme-toggle:checked) .theme-switch__label i {
+    color: #ffffff !important;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .light__nav-logo,
+  .dark__navbar-logo {
+    display: none !important;
+  }
+}
 .about {
   padding: 80px 0;
 }
@@ -538,7 +723,8 @@ input, textarea {
 .services .services__images img, .services .stories__images img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: 16px;
 }
 .services__content h2 {
@@ -728,7 +914,8 @@ input, textarea {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   flex-shrink: 0;
 }
 .reviews__card-name {
@@ -767,7 +954,7 @@ input, textarea {
   transition: all 0.3s ease;
   font-size: 16px;
 }
-.reviews__nav button:hover, .reviews__nav button.active {
+.reviews__nav button:hover {
   background-color: #052A44;
   border-color: #052A44;
   color: #ffffff;
@@ -833,6 +1020,9 @@ input, textarea {
   transition: border-color 0.2s ease;
   width: 100%;
 }
+.contact__input::-moz-placeholder {
+  color: rgba(26, 35, 50, 0.45);
+}
 .contact__input::placeholder {
   color: rgba(26, 35, 50, 0.45);
 }
@@ -855,6 +1045,7 @@ input, textarea {
 }
 
 .footer {
+  text-align: center;
   background-color: #1E2A39;
   padding: 48px 0 24px;
 }
@@ -896,6 +1087,7 @@ input, textarea {
 }
 .footer__social-links {
   display: flex;
+  justify-content: center;
   gap: 16px;
 }
 .footer__social-links a {
@@ -932,4 +1124,112 @@ input, textarea {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/*# sourceMappingURL=main.css.map */
+@media (max-width: 767px) {
+  .btn--outline-white, #sign-in, .navbar__logo, .hero__stats {
+    display: none;
+  }
+  .navbar {
+    background-color: inherit;
+  }
+}
+@media (min-width: 767px) {
+  .light__nav-logo, .dark__navbar-logo {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .hero {
+    padding: 30px 0 50px;
+    text-align: center;
+  }
+  .hero__container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hero__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    order: 1;
+  }
+  .hero__title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+  .hero__description {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  .hero__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+    width: 100%;
+    order: 2;
+  }
+  .hero__buttons .btn {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 767px) and (max-width: 360px) {
+  .hero__buttons {
+    gap: 8px;
+  }
+  .hero__buttons .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 767px) {
+  .hero__visual {
+    display: block;
+    max-width: 70%;
+    margin: 20px auto;
+    order: 3;
+    position: relative;
+  }
+  .hero__card {
+    padding: 10px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  .hero__card--top {
+    left: -40px;
+    top: 40px;
+    width: 110px;
+    height: auto;
+  }
+  .hero__card--middle {
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 110px;
+    height: auto;
+  }
+  .hero__card--bottom {
+    left: -40px;
+    bottom: 40px;
+    width: 110px;
+    height: auto;
+  }
+  .hero__card h4 {
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .hero__card p {
+    font-size: 8px;
+  }
+  .hero__card img {
+    height: 25px;
+    width: auto;
+  }
+}/*# sourceMappingURL=main.css.map */

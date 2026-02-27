@@ -3,6 +3,7 @@
 // ============================================
 
 .footer {
+  text-align: center;
   background-color: $color-dark-navy;
   padding: $spacing-lg 0 $spacing-md;
 
@@ -49,6 +50,7 @@
 
     &-links {
       display: flex;
+      justify-content: center;
       gap: $spacing-sm;
 
       a {

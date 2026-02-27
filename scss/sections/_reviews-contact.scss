@@ -93,8 +93,7 @@
       transition: all $transition-normal;
       font-size: $font-size-base;
 
-      &:hover,
-      &.active {
+      &:hover {
         background-color: $color-dark-blue;
         border-color: $color-dark-blue;
         color: $color-white;

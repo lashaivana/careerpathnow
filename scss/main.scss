@@ -13,9 +13,12 @@
 @import 'components/buttons';
 
 // 4. Sections
+
+
 // კაცი 1
 @import 'sections/navbar';
 @import 'sections/hero';
+@import 'components/theme';
 
 // კაცი 2
 @import 'sections/about';
@@ -25,3 +28,4 @@
 @import 'sections/reviews-contact';
 @import 'sections/footer';
 
+@import 'responsive/mobile.scss'

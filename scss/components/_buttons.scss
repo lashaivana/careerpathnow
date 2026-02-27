@@ -21,8 +21,7 @@
     color: $color-white;
 
     &:hover {
-      background-color: $color-white;
-      color: $color-dark;
+      color: $color-white;
     }
   }
 
@@ -62,6 +61,7 @@
       color: $color-dark;
       @include flex-center;
       font-size: $font-size-xs;
+      transition: all 0.3s ease;
     }
 
     &:hover {

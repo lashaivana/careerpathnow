@@ -1,0 +1,239 @@
+
+body {
+  background-color: #1E2A39; /* მუქი ფონი თავიდანვე */
+  color: #ffffff;           /* თეთრი ტექსტი */
+  transition: background-color 0.4s ease, color 0.4s ease;
+  margin: 0;
+}
+
+
+.icon-moon {
+  display: none !important;
+}
+
+.light__nav-logo{
+  display: none;
+}
+/* როცა ჩეკბოქსი მონიშნულია (Light Mode ჩაირთო) */
+/* მზე დავმალოთ */
+.theme-switch__input:checked + .theme-switch__label .icon-sun {
+  display: none !important;
+}
+
+/* მთვარე გამოვაჩინოთ */
+.theme-switch__input:checked + .theme-switch__label .icon-moon {
+  display: block !important;
+  color: #ffffff !important; 
+}
+
+
+.theme-switch__input{
+    display: none;}
+
+/* მთლიანი გვერდის გადაყვანა LIGHT MODE-ზე */
+body:has(.theme-switch__input:checked) {
+  background-color: #ffff !important; /* !important აიძულებს ბრაუზერს ფერის შეცვლას */
+  color: #052A44 !important;
+}
+
+/* ყველა ტექსტის გაფერადება ნათელ რეჟიმში */
+body:has(.theme-switch__input:checked) h1,
+body:has(.theme-switch__input:checked) h2,
+body:has(.theme-switch__input:checked) h3,
+body:has(.theme-switch__input:checked) h4,
+body:has(.theme-switch__input:checked) p{
+    color: #052A44;
+}
+body:has(.theme-switch__input:checked) span,
+// body:has(.theme-switch__input:checked) a:not(.btn) {
+//   color: #052A44 !important;
+// }
+
+/* სექციების ფონების შეცვლა */
+body:has(.theme-switch__input:checked) .hero,
+// body:has(.theme-switch__input:checked) .navbar,
+body:has(.theme-switch__input:checked) .about,
+body:has(.theme-switch__input:checked) .services,
+body:has(.theme-switch__input:checked) .stories,
+body:has(.theme-switch__input:checked) .reviews,
+body:has(.theme-switch__input:checked) .contact,
+body:has(.theme-switch__input:checked) .footer {
+  background-color: #ffffff !important;
+}
+body:has(.theme-switch__input:checked) .btn--primarywht {
+    background-color: #052A44;
+    color:#ffffff;
+}
+
+body:has(#theme-toggle:checked) .btn--play {
+    color: #052A44 !important;
+}
+
+
+/* თუ გინდა, რომ პლეის იკონის ფერიც შეიცვალოს მასთან ერთად */
+
+body:has(#theme-toggle:checked) .about__card{
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+body:has(#theme-toggle:checked) .footer__brand-name,
+body:has(#theme-toggle:checked) .footer__brand-info{
+    color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .footer__social-links a{
+    color: #052A44;
+    border-radius: 50%;
+    border: 1px solid #052A44;
+}
+body:has(#theme-toggle:checked) .reviews__nav button {
+    color: #052A44;
+}
+body:has(#theme-toggle:checked) .reviews__nav button:hover{
+    color: #ffff;
+    background-color: #052A44;
+}
+body:has(#theme-toggle:checked) .active{
+    color: #ffffff;
+}
+body:has(.theme-switch__input:checked) .hero__stats-text{
+  color: #052A44;
+}
+body:has(.theme-switch__input:checked) .hero__stats-text strong{
+  color: #052A44;
+}
+
+body:has(#theme-toggle:checked) .dark__navbar-logo{
+  display: none;
+}
+body:has(#theme-toggle:checked) .light__nav-logo{
+  display: flex;
+}
+
+
+
+
+/* theme.scss */
+/* 1. ზოგადი წესი (ყოველთვის მუშაობს) */
+.dark__navbar-logo, 
+.light__nav-logo {
+  @media (min-width: 768px) {
+    display: none !important; // დიდ ეკრანზე მობილურის ლოგოები საერთოდ არ გვინდა
+  }
+}
+
+/* 2. თემის ცვლილების ბლოკი */
+body:has(.theme-switch__input:checked) {
+  
+  // მობილურის ლოგოების მართვა მხოლოდ პატარა ეკრანზე
+  @media (max-width: 767px) {
+    .dark__navbar-logo {
+      display: none !important;
+    }
+    .light__nav-logo {
+      display: flex !important; // მხოლოდ აქ და ამ დროს გამოჩნდება
+      color: #052A44;
+    }
+  }
+
+  }
+
+
+//   /* theme.scss-ის შიგნით */
+// body:has(.theme-switch__input:checked) {
+  
+//   @media (max-width: 767px) {
+//     /* 1. ნავბარის ფონი */
+//     .navbar {
+//       background-color: #ffffff !important;
+//     }
+
+//     /* 2. ბურგერ მენიუს ხაზები (span) */
+//     .navbar__hamburger span {
+//       background-color: #052A44 !important; // აქ მნიშვნელოვანია background-color
+//     }
+
+//     /* 3. აიქონები (Search, User, Toggle) */
+//     .theme-switch__label  {
+//       color: #052A44 !important; // აქ მნიშვნელოვანია color
+//     }
+//    .navbar__actions .theme-switch__label i,
+//     .navbar__icon,
+//     .fa-sun,
+//     .fa-moon {
+//       color: #052A44 !important;
+//     }
+//   }
+// }
+
+/* theme.scss */
+
+body:has(#theme-toggle:checked) {
+  background-color: #ffffff !important;
+  color: #052A44 !important;
+
+  /* მობილურის ვერსია (767px-მდე) */
+  @media (max-width: 767px) {
+    
+    // 1. ნავბარის ფონი თეთრდება
+    .navbar {
+      background-color: #ffffff !important;
+    }
+
+    // 2. ლოგოების მართვა
+    .dark__navbar-logo {
+      display: none !important;
+    }
+    .light__nav-logo {
+      display: block !important; // მობილურზე გამოჩნდება თეთრი ლოგო
+    }
+
+    // 3. აიქონების და ბურგერის ფერი (ყველაზე მნიშვნელოვანი)
+    // ჩვენ მივმართავთ პირდაპირ i თეგებს და ბურგერის span-ებს
+    .navbar__hamburger span {
+      background-color: #052A44 !important;
+    }
+
+    .navbar__actions .theme-switch__label i,
+    .navbar__icon,
+    .fa-sun,
+    .fa-moon {
+      color: #052A44 !important;
+    }
+
+    // 4. მობილური მენიუ (ჩამოსაშლელი)
+    .navbar__mobile-menu {
+      background-color: #ffffff !important;
+      li a {
+        color: #052A44 !important;
+      }
+    }
+  }
+
+  /* დესკტოპის ვერსია (768px-დან) */
+  @media (min-width: 768px) {
+    .navbar {
+      background-color: #052A44 !important; // დესკტოპზე მუქი რჩება
+    }
+    
+    // დესკტოპზე მობილურის ლოგოები ყოველთვის დამალულია
+    .light__nav-logo, 
+    .dark__navbar-logo {
+      display: none !important;
+    }
+
+    // აიქონები დესკტოპზე თეთრი რჩება
+    .theme-switch__label i {
+      color: #ffffff !important;
+    }
+  }
+}
+
+/* ზოგადი წესი: მობილურის ლოგოები დიდ ეკრანზე არასდროს ჩანდეს */
+@media (min-width: 768px) {
+  .light__nav-logo, 
+  .dark__navbar-logo {
+    display: none !important;
+  }
+}

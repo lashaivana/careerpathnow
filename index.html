@@ -19,7 +19,8 @@
   <nav class="navbar">
     <div class="navbar__container">
       <a href="#" class="navbar__logo">CareerPathNow</a>
-
+      <img src="images/Logo (1).svg" alt="logo" class="dark__navbar-logo">
+      <img src="images/Logo (2).svg" alt="logo" class="light__nav-logo">
       <ul class="navbar__links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
@@ -28,8 +29,14 @@
       </ul>
 
       <div class="navbar__actions">
-        <i class="fa-solid fa-sun navbar__icon"></i>
-        <a href="#" class="btn btn--primarywht">Sign In</a>
+        
+        <input type="checkbox" id="theme-toggle" class="theme-switch__input">
+        <label for="theme-toggle" class="theme-switch__label">
+        <i class="fa-solid fa-sun icon-sun"></i>
+        <i class="fa-solid fa-moon icon-moon"></i>
+        </label>
+        </input>
+        <a href="#" class="btn btn--primarywht" id="sign-in">Sign In</a>
         <a href="#" class="btn btn--outline-white">Free Trial</a>
       </div>
 
@@ -48,6 +55,7 @@
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
       <li><a href="#">Sign In</a></li>
+       <li><a href="#">Free Trial</a></li>
     </ul>
   </nav>
 
@@ -199,11 +207,11 @@
 
           <ul class="services__list">
             <li>
-              <div class="service-icon"><i class="fa-solid fa-user"></i></div>
+              <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
               Personality Assessment
             </li>
             <li>
-              <div class="service-icon"><i class="fa-solid fa-chart-bar"></i></div>
+              <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
               Skill Evaluations
             </li>
             <li>
@@ -231,7 +239,7 @@
 
           <ul class="stories__list">
             <li>
-              <div class="story-icon"><i class="fa-solid fa-chart-bar"></i></div>
+              <div class="story-icon"><i class="fa-solid fa-briefcase"></i></div>
               Skill Evaluations
             </li>
             <li>

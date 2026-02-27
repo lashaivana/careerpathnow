@@ -1,0 +1,130 @@
+@media(max-width:767px){
+    .btn--outline-white, #sign-in, .navbar__logo, .hero__stats{
+        display: none;
+    }
+    .navbar{
+        background-color: inherit;
+    }
+}
+@media(min-width:767px){
+    .light__nav-logo, .dark__navbar-logo{
+        display: none;
+    }
+}
+.hero {
+  @media (max-width: 767px) {
+    padding: 30px 0 50px;
+    text-align: center;
+
+    &__container {
+      display: flex;
+      flex-direction: column; 
+      gap: 20px;
+    }
+
+    &__content {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      order: 1; 
+    }
+
+    &__title {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+
+    &__description {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+   &__buttons {
+      display: flex;
+      flex-direction: row; // ღილაკები გვერდიგვერდ
+      justify-content: center; // ცენტრში გასწორება
+      align-items: center;
+      flex-wrap: nowrap; // არ გადავიდეს ახალ ხაზზე (თუ ძალიან პატარა ეკრანი არაა)
+      gap: 12px; // დაშორება ღილაკებს შორის
+      width: 100%;
+      order: 2;
+
+      .btn {
+        width: auto; // ღილაკი აღარ დაიკავებს სრულ სიგანეს
+        padding: 10px 20px; // შიდა დაშორება
+        font-size: 14px;
+        white-space: nowrap; // ტექსტი რომ არ გადავიდეს ახალ ხაზზე ღილაკის შიგნით
+      }
+      
+      // ძალიან პატარა ეკრანებისთვის (მაგ. 320px), რომ არ გაიჭედოს
+      @media (max-width: 360px) {
+        gap: 8px;
+        .btn {
+          padding: 8px 12px;
+          font-size: 13px;
+        }
+      }
+    }
+
+    &__visual {
+      display: block;
+      max-width: 70%; // ოდნავ გავზარდოთ, რომ ბარათები დაეტიოს
+      margin: 20px auto;
+      order: 3; // მესამე ადგილზე სურათი
+      position: relative;
+    }
+
+    // &__stats {
+    //   margin-top: 20px;
+    //   justify-content: center;
+    //   order: 4; // სტატისტიკა ჩავიტანოთ სულ ბოლოში
+    // }
+
+    &__card {
+      padding: 10px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+      // ბარათების პოზიციონირება სურათის მიმართ
+      &--top {
+        left: -40px; 
+        top: 40px;
+        width: 110px;
+        height: auto; // მიეცი საშუალება კონტენტს თავად განსაზღვროს სიმაღლე
+      }
+      
+      &--middle {
+        left: -40px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 110px;
+        height: auto;
+      }
+
+      &--bottom {
+        left: -40px;
+        bottom: 40px;
+        width: 110px;
+        height: auto;
+      }
+
+      // ბარათის შიდა კონტენტი
+      h4 {
+        font-size: 10px; // ოდნავ გავზარდოთ კითხვადობისთვის
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 8px;
+      }
+
+      img {
+        height: 25px; // იკონებიც ოდნავ გავზარდოთ
+        width: auto;
+      }
+    }
+  }
+}
+  
