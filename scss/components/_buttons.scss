@@ -5,28 +5,30 @@
 .btn {
   @include btn-base;
 
-  // Primary button - dark background, white text
+  // Primary - dark bg, white text (Get Started)
   &--primary {
     background-color: $color-dark-blue;
     color: $color-white;
 
     &:hover {
-      background-color: lighten($color-dark, 10%);
+      background-color: #2a3a52;
+      color: $color-white;
     }
   }
 
-  // Primary button white - white background, dark text
+  // Primary white - transparent, adapts to mode (Sign In)
   &--primarywht {
     background-color: transparent;
     color: $color-white;
+    border: none;
 
     &:hover {
-      background-color: $color-white;
-      color: $color-dark;
+      color: $color-yellow;
+      background-color: transparent;
     }
   }
 
-  // Secondary button - outline style
+  // Secondary - outline style
   &--secondary {
     background-color: transparent;
     color: $color-white;
@@ -34,32 +36,32 @@
 
     &:hover {
       background-color: $color-white;
-      color: $color-dark;
+      color: #1a2332;
     }
   }
 
   // Yellow button
   &--yellow {
     background-color: $color-yellow;
-    color: $color-dark;
+    color: #1a2332;
 
     &:hover {
-      background-color: darken($color-yellow, 8%);
+      background-color: #d4c770;
     }
   }
 
-  // Play icon button (Learn More style)
+  // Play icon button (Learn More)
   &--play {
     background-color: transparent;
-    color: $color-white;
+    color: var(--text-primary);
     padding-left: 0;
 
     .btn__icon {
       width: 36px;
       height: 36px;
       border-radius: $radius-full;
-      background-color: $color-white;
-      color: $color-dark;
+      background-color: var(--text-primary);
+      color: var(--bg-primary);
       @include flex-center;
       font-size: $font-size-xs;
     }
@@ -67,9 +69,10 @@
     &:hover {
       transform: none;
       box-shadow: none;
+
       .btn__icon {
-        background-color: $color-dark-blue;
-        color: $color-white;
+        background-color: $color-yellow;
+        color: #1a2332;
       }
     }
   }
@@ -77,13 +80,23 @@
   // White outlined (Free Trial in navbar)
   &--outline-white {
     background-color: $color-white;
-    color: $color-dark;
-    border: 2px solid $color-white;
-    padding: 8px 20px;
+    color: #1a2332;
+    // border: 2px solid $color-white;
+    padding: 12px 48px;
 
     &:hover {
-      background-color: $color-white;
-      color: $color-dark;
+      background-color: $color-yellow;
+      color: $color-dark-blue;
+    }
+  }
+
+  &--hero {
+    background-color: $color-yellow;
+    color: #1a2332;
+  
+    &:hover {
+      background-color: #d4c770;
+      color: #1a2332;
     }
   }
 }

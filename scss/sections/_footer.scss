@@ -1,10 +1,11 @@
 // ============================================
-// FOOTER - კაცი 3-ის ნაწილი
+// FOOTER
 // ============================================
 
 .footer {
-  background-color: $color-dark-navy;
+  background-color: var(--bg-secondary);
   padding: $spacing-lg 0 $spacing-md;
+  transition: background-color $transition-normal;
 
   &__container {
     @include container;
@@ -15,7 +16,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: $spacing-lg;
     padding-bottom: $spacing-md;
-    border-bottom: 1px solid rgba($color-white, 0.1);
+    border-bottom: 1px solid var(--border-color);
     margin-bottom: $spacing-md;
 
     @include mobile {
@@ -28,13 +29,13 @@
     &-name {
       font-size: $font-size-md;
       font-weight: $font-weight-bold;
-      color: $color-white;
+      color: var(--text-primary);
       margin-bottom: $spacing-xs;
     }
 
     &-info {
       font-size: $font-size-xs;
-      color: rgba($color-white, 0.65);
+      color: var(--text-secondary);
       line-height: 1.8;
     }
   }
@@ -43,7 +44,7 @@
     h4 {
       font-size: $font-size-sm;
       font-weight: $font-weight-semibold;
-      color: $color-white;
+      color: var(--text-primary);
       margin-bottom: $spacing-sm;
     }
 
@@ -55,16 +56,16 @@
         width: 36px;
         height: 36px;
         border-radius: $radius-full;
-        border: 1px solid rgba($color-white, 0.3);
+        border: 1px solid var(--border-color);
         @include flex-center;
-        color: $color-white;
+        color: var(--text-primary);
         font-size: $font-size-sm;
         transition: all $transition-fast;
 
         &:hover {
           background-color: $color-yellow;
           border-color: $color-yellow;
-          color: $color-dark;
+          color: #1a2332;
         }
       }
     }
@@ -74,21 +75,20 @@
     h4 {
       font-size: $font-size-sm;
       font-weight: $font-weight-semibold;
-      color: $color-white;
+      color: var(--text-primary);
       margin-bottom: $spacing-sm;
     }
 
     p {
       font-size: $font-size-xs;
-      color: rgba($color-white, 0.65);
+      color: var(--text-secondary);
       line-height: 1.8;
     }
   }
 
-  // Copyright bar
   &__bottom {
     text-align: center;
     font-size: $font-size-xs;
-    color: rgba($color-white, 0.5);
+    color: var(--text-muted);
   }
 }

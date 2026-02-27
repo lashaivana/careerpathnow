@@ -11,44 +11,53 @@
   <!-- Compiled CSS (scss-დან გამოდის) -->
   <link rel="stylesheet" href="css/main.css" />
 </head>
+
+
 <body>
 
-  <!-- ============================
-    NAVBAR - კაცი 1
-  ============================= -->
   <nav class="navbar">
     <div class="navbar__container">
       <a href="#" class="navbar__logo">CareerPathNow</a>
-
+  
       <ul class="navbar__links">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About Us</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-
+  
       <div class="navbar__actions">
         <i class="fa-solid fa-sun navbar__icon"></i>
         <a href="#" class="btn btn--primarywht">Sign In</a>
         <a href="#" class="btn btn--outline-white">Free Trial</a>
       </div>
-
-      <!-- Mobile hamburger -->
-      <div class="navbar__hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+  
+      <!-- Mobile right - icon + hamburger -->
+      <div class="navbar__mobile-right">
+        <i class="fa-solid fa-sun navbar__icon"></i>
+        <div class="navbar__hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </div>
-
-    <!-- Mobile menu -->
-    <ul class="navbar__mobile-menu" id="mobileMenu">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#">Sign In</a></li>
-    </ul>
+  
+    <!-- Mobile menu - სრულეკრანიანი -->
+    <div class="navbar__mobile-menu" id="mobileMenu">
+      <div class="navbar__mobile-menu-header">
+        <a href="#" class="navbar__logo">CareerPathNow</a>
+        <span id="closeMenu">✕</span>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Sign In</a></li>
+        <li><a href="#" class="btn btn--outline-white">Free Trial</a></li>
+      </ul>
+    </div>
   </nav>
 
   <!-- ============================
@@ -66,7 +75,7 @@
           that helps individuals make informed decisions about their career paths.
         </p>
         <div class="hero__buttons">
-          <a href="#" class="btn btn--primarywht">Get Started</a>
+          <a href="#" class="btn btn--primarywht btn--hero">Get Started</a>
           <a href="#" class="btn btn--play">
             <div class="btn__icon">
               <i class="fa-solid fa-play"></i>
@@ -99,12 +108,7 @@
                         <p>200+ Online User </p>
                         <img src="images/plus.svg" alt="plus icon">
                     </div>
-          <!-- <div class="hero__card-label">Our Happy Users</div>
-          <div class="hero__card-users">
-            <img src="https://i.pravatar.cc/24?img=4" alt="" />
-            <img src="https://i.pravatar.cc/24?img=5" alt="" />
-            <img src="https://i.pravatar.cc/24?img=6" alt="" />
-          </div> -->
+
         </div>
 
         <div class="hero__card hero__card--middle">
@@ -382,13 +386,34 @@
 
   <!-- JavaScript - hamburger menu -->
   <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
+    // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('is-open');
-    });
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('is-open');
+  });
+
+  // Close menu (X ღილაკი)
+  const closeMenu = document.getElementById('closeMenu');
+  closeMenu.addEventListener('click', () => {
+    mobileMenu.classList.remove('is-open');
+  });
+
+  // Light/Dark mode
+  const themeIcon = document.querySelector('.navbar__icon');
+
+  themeIcon.addEventListener('click', () => {
+    document.documentElement.classList.toggle('light');
+
+    if (document.documentElement.classList.contains('light')) {
+      themeIcon.classList.replace('fa-sun', 'fa-moon');
+    } else {
+      themeIcon.classList.replace('fa-moon', 'fa-sun');
+    }
+  });
   </script>
+
 
 </body>
 </html>

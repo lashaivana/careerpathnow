@@ -1,5 +1,5 @@
 // ============================================
-// NAVBAR - კაცი 1-ის ნაწილი
+// NAVBAR
 // ============================================
 
 .navbar {
@@ -9,26 +9,26 @@
   top: 0;
   z-index: 100;
   box-shadow: $shadow-sm;
+  transition: background-color $transition-normal;
 
   &__container {
     @include container;
     @include flex-between;
   }
 
-  // Logo
   &__logo {
     font-size: $font-size-md;
     font-weight: $font-weight-bold;
     color: $color-white;
   }
 
-  // Navigation links
+  // Desktop nav links
   &__links {
     @include flex-center;
     gap: $spacing-md;
 
     @include mobile {
-      display: none; // mobile-ზე hamburger მენიუ
+      display: none;
     }
 
     li a {
@@ -42,33 +42,47 @@
     }
   }
 
-  // Right side (icon + buttons)
+  // Desktop actions (Sign In, Free Trial)
   &__actions {
     @include flex-center;
     gap: $spacing-sm;
+
+    @include mobile {
+      display: none; // მობაილზე იმალება
+    }
   }
 
+  // Sun/Moon icon — მობაილზეც ჩანს!
   &__icon {
     color: $color-white;
     font-size: $font-size-md;
     cursor: pointer;
     opacity: 0.8;
+    transition: all $transition-fast;
+    display: block; // ყოველთვის ჩანს
 
     &:hover {
       opacity: 1;
     }
   }
 
-  // Hamburger (mobile only)
-  &__hamburger {
+  // მობაილის მარჯვენა მხარე - icon + hamburger
+  &__mobile-right {
     display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+    align-items: center;
+    gap: $spacing-sm;
 
     @include mobile {
       display: flex;
     }
+  }
+
+  // Hamburger
+  &__hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
 
     span {
       width: 24px;
@@ -79,25 +93,67 @@
     }
   }
 
-  // Mobile menu (open state)
+  // // Mobile menu
+  // &__mobile-menu {
+  //   display: none;
+  //   flex-direction: column;
+  //   gap: $spacing-sm;
+  //   padding: $spacing-sm $container-padding;
+  //   background-color: $color-dark-navy;
+  //   transition: background-color $transition-normal;
+
+  //   &.is-open {
+  //     display: flex;
+  //   }
+
+  //   li a {
+  //     font-size: $font-size-sm;
+  //     color: $color-white;
+  //     padding: 8px 0;
+  //     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  //   }
+  // }
   &__mobile-menu {
-   
-
     display: none;
-    flex-direction: column; // ← @include flex-column-ის მაგივრად
-    gap: $spacing-sm;
-    padding: $spacing-sm $container-padding;
-    background-color: $color-dark-navy;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    z-index: 200;
+    flex-direction: column;
+    padding: $spacing-md $spacing-lg;
+    ul li a.btn--outline-white {
+      padding: 12px 80px !important;
+      font-size: $font-size-base;
+    }
+  
     &.is-open {
       display: flex;
     }
-
+  
+    &-header {
+      @include flex-between;
+      margin-bottom: $spacing-xl;
+  
+      span {
+        color: var(--text-primary);
+        font-size: $font-size-lg;
+        cursor: pointer;
+      }
+    }
+  
+    ul {
+      @include flex-column;
+      align-items: center;
+      gap: $spacing-md;
+    }
+  
     li a {
-      font-size: $font-size-sm;
-      color: $color-white;
+      font-size: $font-size-md;
+      color: var(--text-primary);
       padding: 8px 0;
-      border-bottom: 1px solid rgba($color-white, 0.1);
     }
   }
 }

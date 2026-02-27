@@ -9,7 +9,7 @@
     @include container;
   }
 
-  // Yellow background wrapper
+  // Yellow background wrapper - ყოველთვის ყვითელია, mode არ იცვლება
   &__wrapper {
     background-color: $color-yellow-bg;
     border-radius: $radius-xl;
@@ -24,57 +24,28 @@
     }
   }
 
-// Services და Stories-სთვის საერთო მიდგომა
-.services__images, .stories__images {
-  width: 100%;
-  max-width: 462px; // მაქსიმალური სიგანე, რაც გინდოდა
-  aspect-ratio: 1 / 1; // ან 462 / 474 თუ ზუსტად ეგ პროპორცია გინდა
-  display: flex;
-  
-  img {
+  // Services და Stories-სთვის საერთო მიდგომა
+  .services__images, .stories__images {
     width: 100%;
-    height: 100%;
-    object-fit: cover; // სურათი შეავსებს სივრცეს და არ გაიწელება
-    border-radius: $radius-lg;
+    max-width: 462px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: $radius-lg;
+    }
   }
-}
-
-
-
-
-  // Left - images
-  // &__images {
-  //   position: relative;
-  //   // height: 320px;
-
-  //   // img {
-  //   //   border-radius: $radius-lg;
-  //   //   object-fit: cover;
-  //   // }
-
-  //   &-main {
-  //     width: 70%;
-  //     height: 220px;
-  //     position: absolute;
-  //     top: 0;
-  //     left: 0;
-  //   }
-
-  //   &-secondary {
-  //     width: 55%;
-  //     height: 160px;
-  //     position: absolute;
-  //     bottom: 0;
-  //     right: 0;
-  //   }
-  // }
 
   // Right - content
+  // ყვითელ bg-ზე ტექსტი ყოველთვის მუქია (mode არ ცვლის)
   &__content {
     h2 {
       font-size: $font-size-xl;
       font-weight: $font-weight-bold;
-      color: $color-dark;
+      color: #1a2332;  // ყოველთვის მუქი - ყვითელ bg-ზე
       margin-bottom: $spacing-sm;
     }
 
@@ -96,7 +67,7 @@
       gap: $spacing-sm;
       justify-content: flex-start;
       font-size: $font-size-sm;
-      color: $color-dark;
+      color: #1a2332;  // ყოველთვის მუქი - ყვითელ bg-ზე
       font-weight: $font-weight-medium;
 
       .service-icon {
@@ -106,7 +77,7 @@
         background-color: $color-white;
         @include flex-center;
         flex-shrink: 0;
-        color: $color-dark;
+        color: #1a2332;
         font-size: $font-size-xs;
       }
     }
@@ -125,6 +96,7 @@
     @include container;
   }
 
+  // ყვითელი wrapper - mode არ ცვლის
   &__wrapper {
     background-color: $color-yellow-bg;
     border-radius: $radius-xl;
@@ -143,7 +115,7 @@
     h2 {
       font-size: $font-size-xl;
       font-weight: $font-weight-bold;
-      color: $color-dark;
+      color: #1a2332;  // ყოველთვის მუქი - ყვითელ bg-ზე
       margin-bottom: $spacing-sm;
     }
 
@@ -165,7 +137,7 @@
       gap: $spacing-sm;
       justify-content: flex-start;
       font-size: $font-size-sm;
-      color: $color-dark;
+      color: #1a2332;  // ყოველთვის მუქი - ყვითელ bg-ზე
 
       .story-icon {
         width: 32px;
@@ -177,30 +149,4 @@
       }
     }
   }
-
-  // &__images {
-  //   position: relative;
-  //   height: 300px;
-
-  //   img {
-  //     border-radius: $radius-lg;
-  //     object-fit: cover;
-  //   }
-
-  //   &-main {
-  //     width: 65%;
-  //     height: 200px;
-  //     position: absolute;
-  //     top: 0;
-  //     right: 0;
-  //   }
-
-  //   &-secondary {
-  //     width: 60%;
-  //     height: 160px;
-  //     position: absolute;
-  //     bottom: 0;
-  //     left: 0;
-  //   }
-  // }
 }

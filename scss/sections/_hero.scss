@@ -1,11 +1,16 @@
 // ============================================
-// HERO SECTION - კაცი 1-ის ნაწილი
+// HERO SECTION
 // ============================================
 
 .hero {
   background-color: $color-dark;
   @include section-padding;
-  overflow: hidden;
+  overflow: visible;
+  transition: background-color $transition-normal;
+
+  @include mobile {
+    overflow-x: hidden;
+  }
 
   &__container {
     @include container;
@@ -14,13 +19,18 @@
 
     @include mobile {
       flex-direction: column;
+      text-align: center;
+      align-items: center;
     }
   }
 
-  // Left side - text content
   &__content {
     flex: 1;
     max-width: 520px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -28,12 +38,12 @@
     font-weight: $font-weight-bold;
     line-height: 1.2;
     margin-bottom: $spacing-md;
+    color: var(--text-primary);
 
     @include mobile {
       font-size: $font-size-xl;
     }
 
-    // "Career" - yellow colored
     span {
       color: $color-yellow;
     }
@@ -41,10 +51,14 @@
 
   &__description {
     font-size: $font-size-sm;
-    color: rgba($color-white, 0.75);
+    color: var(--text-secondary);
     line-height: 1.7;
     margin-bottom: $spacing-md;
     max-width: 420px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__buttons {
@@ -52,12 +66,19 @@
     gap: $spacing-sm;
     margin-bottom: $spacing-lg;
     flex-wrap: wrap;
+
+    @include mobile {
+      justify-content: center;
+    }
   }
 
-  // Stats (10K+ satisfied students)
   &__stats {
     @include stats-row;
     gap: $spacing-sm;
+
+    @include mobile {
+      justify-content: center;
+    }
 
     &-avatars {
       display: flex;
@@ -66,7 +87,7 @@
         width: 36px;
         height: 36px;
         border-radius: $radius-full;
-        border: 2px solid $color-dark;
+        border: 2px solid var(--bg-primary);
         margin-right: -10px;
         object-fit: cover;
       }
@@ -74,24 +95,26 @@
 
     &-text {
       font-size: $font-size-xs;
-      color: rgba($color-white, 0.8);
+      color: var(--text-secondary);
 
       strong {
         display: block;
-        color: $color-white;
+        color: var(--text-primary);
         font-weight: $font-weight-semibold;
       }
     }
   }
 
-  // Right side - image + cards
   &__visual {
     flex: 1;
     position: relative;
     max-width: 480px;
-
+  
     @include mobile {
-      display: none; // mobile-ზე მხოლოდ ტექსტი
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      padding-left: 0; 
     }
   }
 
@@ -104,89 +127,92 @@
       width: 100%;
       height: 400px;
       object-fit: cover;
+
+      @include mobile {
+        height: 300px;
+      }
     }
   }
 
-  // Floating stats card
   &__card {
     position: absolute;
     background: $color-white;
     border-radius: $radius-lg;
     padding: $spacing-sm;
     box-shadow: $shadow-md;
-    color: $color-dark;
+    color: $color-text;
     text-align: center;
+  
+    @include mobile {
+      display: none; 
+    }
 
     &--top {
       top: 20px;
       left: -60px;
       width: 143px;
       height: 106px;
+    
+      @include mobile {
+        top: 10px;
+        left: -78px;
+        width: 85px;   
+        height: 70px;  
+      }
     }
-
-    &--middle{
-      top: 150px;
+    
+    &--middle {
+      top: 130px;
       left: -60px;
       width: 143px;
       height: 106px;
+    
+      @include mobile {
+        top: 90px;
+        left: -78px;
+        width: 85px;   
+        height: 70px;  
+      }
     }
-
+    
     &--bottom {
-      bottom: 20px;
+      top: 240px;
       left: -60px;
       width: 143px;
       height: 106px;
+    
+      @include mobile {
+        top: 170px;
+        bottom: auto;
+        left: -78px;
+        width: 85px;   
+        height: 70px;  
+      }
     }
 
     h4 {
-      font-size: 12px; // შეამცირე სათაურის ზომა
+      font-size: 12px;
       margin: 0;
       line-height: 1.2;
-      color: $color-dark;
+      color: $color-text;
     }
 
     p {
-      font-size: 10px; // შეამცირე ტექსტის ზომა
+      font-size: 10px;
       margin: 0;
       color: $color-text-light;
     }
 
     img {
-      width: auto; // შეამცირე იკონების/პროფილების ზომა
+      width: auto;
       height: 30px;
-      margin-top: 4px;
-      margin: auto;
+      margin: 4px auto 0;
     }
-
-    // &-label {
-    //   font-size: $font-size-xs;
-    //   color: $color-text-light;
-    //   margin-bottom: 4px;
-    // }
-
-    // &-value {
-    //   font-size: $font-size-lg;
-    //   font-weight: $font-weight-bold;
-    //   color: $color-dark;
-    // }
-
-    // &-users {
-    //   display: flex;
-    //   gap: 4px;
-    //   margin-top: 4px;
-
-    //   img {
-    //     width: 24px;
-    //     height: 24px;
-    //     border-radius: $radius-full;
-    //     object-fit: cover;
-    //   }
-    // }
   }
 }
-    .banner-card{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-   
+
+.banner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
